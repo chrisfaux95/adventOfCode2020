@@ -1,5 +1,5 @@
 from itertools import combinations
-
+from functools import reduce
 test_input = [
     1721,
     979,
@@ -15,10 +15,8 @@ in_expenses = list(map(int, lines))
 
 
 def product(n):
-    res = 1
-    for i in n:
-        res *= i
-    return res
+    return reduce(lambda a, b: a*b, n, 1)
+
 
 # Part 1
 
