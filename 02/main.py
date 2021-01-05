@@ -26,5 +26,31 @@ def p1(i):
     print("Valid Passwords:", valid_pass)
 
 
+# Part 2:
+
+def p2(i):
+    with open(i) as file:
+        lines = file.readlines()
+    l = [x.split() for x in lines]
+    valid_pass = 0
+    for item in l:
+        [start, end] = item[0].split('-')
+        [start, end] = [int(start), int(end)]
+        # print(start,end)
+        char_check = 0
+        if item[2][start - 1] == item[1][0]:
+            char_check += 1
+        if item[2][end - 1] == item[1][0]:
+            char_check += 1
+        if char_check == 1:
+            valid_pass += 1
+    print("Valid Passwords", valid_pass)
+
+
+
+
+
 # p1(TEST_INPUT)
-p1(INPUT_FILE)
+# p1(INPUT_FILE)
+# p2(TEST_INPUT)
+p2(INPUT_FILE)
