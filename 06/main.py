@@ -1,15 +1,18 @@
 INPUT_FILE = 'input'
 TEST_INPUT = 'test_input'
 
+
 def readfile(f):
     with open(f) as file:
         inp = file.read().strip().split("\n\n")
     return inp
 
+
 def p1(inp):
     l = [set(x.replace('\n', '')) for x in inp]
     k = [len(x) for x in l]
     print("PART 1:", sum(k))
+
 
 def p2(inp):
     l = [x.split("\n") for x in inp]
@@ -18,7 +21,6 @@ def p2(inp):
     # print(j)
     print("PART 2:", sum(j))
 
-    
 
 PUZZLE_INPUT = readfile(INPUT_FILE)
 # PUZZLE_INPUT = readfile(TEST_INPUT)
